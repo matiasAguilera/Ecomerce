@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <form #usuarioForm="ngForm" class="example-form text-lg-right" (ngSubmit)="crearUsuario(usuarioForm)" (click)="mensaje('procesando')">
+          <mat-form-field class="example-full-width">
+            <mat-label>username</mat-label>
+            <input matInput placeholder="userName" id="userName" name="userName" type="text" [(ngModel)]="_singin.usuarioSelected.userName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="password" id="password" name="password" [(ngModel)]="_singin.usuarioSelected.password" type="password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>nombre</mat-label>
+            <input matInput placeholder="nombre" id="nombre" name="nombre" [(ngModel)]="_singin.usuarioSelected.nombre" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>apellido</mat-label>
+            <input matInput placeholder="apellido" id="apellido" name="apellido" [(ngModel)]="_singin.usuarioSelected.apellido" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>email</mat-label>
+            <input matInput placeholder="email" id="email" name="email" [(ngModel)]="_singin.usuarioSelected.email" type="email">
+          </mat-form-field>
+          <button class="btn waves-effect waves-light">enviar
+            <i class="material-icons right">send</i>
+        </button>
+        <mat-progress-bar mode="indeterminate" class="bar" *ngIf="logeado"></mat-progress-bar>
+        </form>
+      </div>
+    </div>
+  </div>

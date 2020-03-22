@@ -1,0 +1,10 @@
+.barra1{
+    background-color:teal !important;
+}
+
+.navbarDropdown{
+    color: white;
+}
+.contentedor{
+  content: inherit;
+}

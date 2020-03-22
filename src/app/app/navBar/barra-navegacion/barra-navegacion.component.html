@@ -1,0 +1,59 @@
+<nav id="barra1" class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+   
+      
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  col-10">
+        
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            servicios
+          </a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">a</a>
+            <a class="dropdown-item" href="#">decoloracion/tintura</a>
+            <a class="dropdown-item" href="#">b</a>
+            <a class="dropdown-item" href="#">c</a>
+            <a class="dropdown-item" href="#">d</a>
+          </div>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav " *ngIf="_login.logedIn()">
+
+        <li class=" nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            cuenta
+          </a>
+          <div class=" dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">carro de compra</a>
+            <a class="dropdown-item" href="#">mi cuenta</a>
+            <a class="dropdown-item" (click)="_login.logout()">salir</a>
+          </div>
+         
+        </li>
+      </ul>
+      <ng-container class="contentedor"  *ngIf="!_login.logedIn()">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="btn btn-success" routerLink="/login">conectarce</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-success" routerLink="/crearCuenta">crear cuenta</a>
+            </li>
+          </ul>
+        </div>
+        
+      </ng-container>
+     
+        
+          
+    </div>
+  
+  </nav>

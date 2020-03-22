@@ -1,0 +1,12 @@
+/* body {
+    background-color:rgb(198, 210, 219);
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* body{
+  background: url(assets/img/tienda.jpg) no-repeat;
+} */
+.white-snackbar{
+  background: white;
+  color:black;
+}

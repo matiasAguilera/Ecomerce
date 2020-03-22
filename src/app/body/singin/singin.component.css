@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: red;
+  background-size: contain; 
+}
+
+.example-form {
+  min-width:  150px ;
+  max-width: 500px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.example-full-width {
+  
+  width: 100%;
+  
+}
+.bar{
+  margin-top: 5%;
+}

@@ -1,0 +1,20 @@
+<div class="box container-fluid text-center ">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="ReactiveForms" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>usuario</mat-label>
+          <input matInput placeholder="usuario" id="nombre" name="nombre" type="text" formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>password</mat-label>
+          <input matInput placeholder="password" id="password" name="password" formControlName="password" type="password">
+        </mat-form-field>
+
+        <button type="submit" class="btn btn-success" (click)="logIn(ReactiveForms)" (click)="mensaje('procesando')">enviar</button>
+        <mat-progress-bar mode="indeterminate" class="bar" *ngIf="logeado"></mat-progress-bar>
+      </form>
+      
+    </div>
+  </div>
+</div>
