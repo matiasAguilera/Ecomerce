@@ -19,7 +19,7 @@ export class BarraNavegacionComponent implements OnInit {
 
   dialogo(){
     const dialogRef=  this.dialog.open(LoginComponent);
-    console.log('prueba');
+    
    
   }
 }
