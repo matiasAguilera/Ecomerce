@@ -5,7 +5,9 @@
             <label for="Nombre">Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="Nombrnombree" formControlName="nombre">
             <label for="Precio">Precio:</label>
-            <input type="text" class="form-control" id="precio" name="precio" formControlName="precio">
+            <input type="number" class="form-control" id="precio" name="precio" formControlName="precio">
+            <label for="stock">stock:</label>
+            <input type="number" class="form-control col-3" id="stock" name="stock" formControlName="stock">
 
             <br>
             <input type="file" name="foto" id="foto" class="foto" (change)="tomaImagen($event)" >
@@ -18,15 +20,31 @@
 </div>
 <div class="container">
   <div class="lista row ">
-    <div class="col-md-12" >
-      <tr *ngFor="let item of _servicioProductos.arrayProducto" >
-        <td>{{item.nombre}}</td>
-        <td>{{item.precio}}</td>
-
-        <img [src]="'http://localhost:8090/servicio/productos/img/' +item.id" 
-                        class="img-thumbnail rounded"
-                        style="width: 64px; cursor: pointer;">
-      </tr>
+    <div class="objetos col-md-3" *ngFor="let item of _servicioProductos.arrayProducto" >
+     
+          <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title style="text-align: center;">{{item.nombre}}</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+          </mat-card-header>
+          <img mat-card-image [src]="'http://localhost:8090/servicio/productos/lista/img/' +item.id"  alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <!-- <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p> -->
+            <p>Precio: {{item.precio}}</p>
+            <p>Stock: {{item.stock}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button class="btn waves-effect waves-light" mat-raised-button  (click)="dialogo(item)">editar
+              <i class="material-icons right">edit</i>
+        </button>
+          </mat-card-actions>
+        </mat-card>
+     
     </div>
   </div>
 </div>

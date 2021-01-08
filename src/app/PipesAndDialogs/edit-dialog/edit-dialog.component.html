@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form>
+                <mat-label>
+                    producto
+                </mat-label><br>
+                <input type="text" [placeholder]="data.producto.nombre" disabled> <br>
+                <mat-label>
+                    precio
+                </mat-label><br>
+                <input type="text"  [(ngModel)]="precio" name="precio"> <br>
+                <mat-label>
+                    stock 
+                </mat-label ><label class="parentecis">(no es el stock total sino que lo que se quiere agregar)</label><br>
+                <input type="number" placeholder="0" [(ngModel)]="agregar" name="stock"> <br>
+                <button class="btn waves-effect waves-light" mat-raised-button  (click)="agregarAStock()">agregar stock
+                    <i class="material-icons right">send</i>
+              </button>
+            </form>
+        </div>
+    </div>
+</div>

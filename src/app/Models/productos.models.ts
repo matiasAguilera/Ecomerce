@@ -1,7 +1,8 @@
 export class Producto {
-  constructor(_id='',_nombre='',_precio=0,_foto=Blob){
+  constructor(_id='',_nombre='',_stock=0,_precio=0,_foto=Blob){
     this.id=_id;
     this.nombre=_nombre;
+    this.stock=_stock;
     this.precio=_precio;
     this.foto=new _foto;
 
@@ -9,6 +10,7 @@ export class Producto {
   id:       string;
   nombre:    string;
   precio:    number;
+  stock:number;
   create_At: Date;
   foto:      Blob;
 }

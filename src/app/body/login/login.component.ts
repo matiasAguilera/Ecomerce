@@ -3,6 +3,7 @@ import {FormGroup,Validators,FormBuilder} from '@angular/forms'
 import { LoginService } from 'src/app/service/login.service';
 import { Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private fb:FormBuilder,
     private _login:LoginService,
     private _router:Router,
-    private _snakBar:MatSnackBar
+    private _snakBar:MatSnackBar,
+    private dialogRef: MatDialogRef<LoginComponent>
   ) { 
     this.ReactiveForms=this.fb.group({
       nombre:['',Validators.required],
@@ -40,7 +42,15 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('iA123',data.access_token);
         this.logeado=false;
         this.mensaje('iniciando sesión')
-        this._router.navigate(['productosAdmin']);
+        if(this._login.isAdmin())
+        {
+          this._router.navigate(['productosAdmin']);
+          
+        }else{
+          this._router.navigate(['tienda']);
+          
+        }
+        this.dialogRef.close();
       },
       error=>{
         this.logeado=false;

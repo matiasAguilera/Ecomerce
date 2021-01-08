@@ -1,0 +1,41 @@
+<app-carrucel></app-carrucel>
+<div class="container col-11">
+  <div class="row">
+  
+    <div class="objetos col-md-4"  *ngFor="let item of _servicioProductos.arrayProducto">
+      <!--Card-->
+      <mdb-card cascade="true" narrower="true">
+  
+        <!--Card image-->
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <mdb-card-img [src]="'http://localhost:8090/servicio/productos/lista/img/' +item.id" ></mdb-card-img>
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--/Card image-->
+  
+        <mdb-card-body cascade="true" class="text-center">
+          <!--Card content-->
+          <h5 class="pink-text">{{item.nombre}}</h5>
+          <!--Title-->
+          <h4 class="card-title">Precio: <b>{{item.precio}}</b></h4>
+          <!--Text-->
+  
+          <mdb-card-text>
+            Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam.
+          </mdb-card-text>
+  
+          <a mdbBtn color="unique" class="waves-light" (click)="agregarProducto(item)" mdbWavesEffect>añadir a carrito de compras </a>
+          
+        </mdb-card-body>
+        <!--/.Card content-->
+  
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+  
+   
+  </div>
+</div>

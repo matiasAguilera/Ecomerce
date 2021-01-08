@@ -1,0 +1,35 @@
+<!--Modal: Login with Avatar Form-->
+<form action="">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+        <mdb-card-img [src]="'http://localhost:8090/servicio/productos/lista/img/' +producto.id" ></mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Body-->
+      <div class="modal-body text-center mb-1">
+
+        <h5 class="mt-1 mb-2">cantidad de productos</h5>
+
+        <div class="md-form ml-0 mr-0">
+        
+          <input type="number" class="form-control" name="cantidadProductos" [(ngModel)]="cantidadProductos" placeholder="N° Productos">
+
+          
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-cyan mt-1" (click)="agregarCarro()">agregar a carro <i class="fas fa-sign-in ml-1"></i></button>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</form>
+<!--Modal: Login with Avatar Form-->

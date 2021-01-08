@@ -4,6 +4,7 @@ import {Producto} from '../Models/productos.models'
 import { Observable } from 'rxjs';
 import { TokenInterceptorService } from './token-interceptor.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,20 +22,28 @@ export class ProductosService {
 
   crearProducto(producto:FormData):Observable<any>{
     console.log(this._token.getToken());
-    return this._httpClient.post(`${this.url}/crear`,producto,{
+    return this._httpClient.post(`${this.url}/api`,producto,{
       headers:this._token.getToken()
     })
   }
 
   getProductos(){
-    return this._httpClient.get(this.url,{
+    return this._httpClient.get(`${this.url}/lista`,{
       headers:this._token.getToken()
     });
   }
+
   getImgProduct():Observable<Blob>{
-    return this._httpClient.get(`${this.url}/img/1`,{
+    return this._httpClient.get(`${this.url}/lista/img/1`,{
       headers:this._token.getToken(),responseType: 'blob' 
     });
     
   }
+
+  putStock(id:any,stock:any){
+    return this._httpClient.put(`${this.url}/api/stock/${id}`,stock,{
+      headers:this._token.getToken()
+    });
+  }
+ 
 }

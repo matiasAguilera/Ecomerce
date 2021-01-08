@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //providers//todo
 import { RouterOutlet } from '@angular/router';
 import {AuthGuard} from './auth.guard';
+import {AuthUsersGuard} from './auth-users.guard';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 
 //components
@@ -22,6 +23,15 @@ import { ProductosComponent } from './body/productos/productos.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditDialogComponent } from './PipesAndDialogs/edit-dialog/edit-dialog.component';
+import {MatCardModule} from '@angular/material/card';
+import { UsuarioProductosComponent } from './body/usuario-productos/usuario-productos.component';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CarrucelComponent } from './body/usuario-productos/carrucel/carrucel.component';
+import { FooterComponent } from './body/footer/footer.component';
+import { AddCarroComponent } from './PipesAndDialogs/add-carro/add-carro.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +41,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CarroComponent,
     LoginComponent,
     ProductosComponent,
-    SinginComponent
+    SinginComponent,
+    EditDialogComponent,
+    UsuarioProductosComponent,
+    CarrucelComponent,
+    FooterComponent,
+    AddCarroComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +57,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatCardModule,MDBBootstrapModule
     
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AuthUsersGuard
     
   ],
   bootstrap: [AppComponent]

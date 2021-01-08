@@ -4,3 +4,14 @@
 .lista{
     margin-top: 3%;
 }
+.example-card {
+    max-width: 400px;
+  }
+  
+.example-header-image {
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+  background-size: cover;
+}
+.objetos{
+  margin-top: 2.5%;
+}

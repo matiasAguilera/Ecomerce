@@ -1,3 +1,7 @@
 <app-barra-navegacion></app-barra-navegacion>
 
 <router-outlet></router-outlet>
+<ng-container *ngIf="estaLogeado()">
+    <app-footer></app-footer>
+</ng-container>
+
