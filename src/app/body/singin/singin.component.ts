@@ -27,6 +27,7 @@ export class SinginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('prueba multiple workflow')
   }
 
   crearUsuario(form:NgForm){
