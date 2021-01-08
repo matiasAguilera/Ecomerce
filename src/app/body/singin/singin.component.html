@@ -3,11 +3,11 @@
       <div class="col-12">
         <form #usuarioForm="ngForm" class="example-form text-lg-right" (ngSubmit)="crearUsuario(usuarioForm)" (click)="mensaje('procesando')">
           <mat-form-field class="example-full-width">
-            <mat-label>Usuario</mat-label>
+            <mat-label>User</mat-label>
             <input matInput placeholder="userName" id="userName" name="userName" type="text" [(ngModel)]="_singin.usuarioSelected.userName">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <mat-label>Contreceñas</mat-label>
+            <mat-label>Password</mat-label>
             <input matInput placeholder="password" id="password" name="password" [(ngModel)]="_singin.usuarioSelected.password" type="password">
           </mat-form-field>
           <mat-form-field class="example-full-width">
