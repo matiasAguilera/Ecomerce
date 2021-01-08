@@ -18,9 +18,6 @@ export class BarraNavegacionComponent implements OnInit {
   }
 
   dialogo(){
-    console.log('tti');
     const dialogRef=  this.dialog.open(LoginComponent);
-    
-   
   }
 }
