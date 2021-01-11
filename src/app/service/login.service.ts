@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -11,13 +12,15 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  
-  url:string="http://localhost:8090/servicio/security/oauth/token";
-
+  zuul:string = environment.zuulGateway;
+  url:string="/servicio/security/oauth/token";
+  endUrl:string;
   constructor(
     private _HttpClient:HttpClient,
     private _router:Router,
-  ) { }
+  ) { 
+    this.endUrl = `${this.zuul}${this.url}`
+  }
   clients:string="frontendapp:12345";
   
   login(data:string){
@@ -27,7 +30,7 @@ export class LoginService {
       'Authorization':`Basic ${btoa(this.clients)}`
     });
     
-    return this._HttpClient.post(this.url,data,{
+    return this._HttpClient.post(this.endUrl,data,{
       headers
     });
     

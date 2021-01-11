@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
 import {Usuario,Role} from '../Models/usuario.model'
 import { NgForm } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,16 +11,17 @@ export class SinginService {
 
   usuarioSelected:Usuario;
   role:Role;
-  _url:string="http://localhost:8090/servicio/usuarios";
+  _zuul:string = environment.zuulGateway;
+  _url:string="/servicio/usuarios";
   headers=new HttpHeaders;
-
+  _endUrl:string;
 
   constructor(
     private _http:HttpClient,
     private _token:TokenInterceptorService
   ) {
-      this.usuarioSelected=new Usuario()
-      
+      this.usuarioSelected=new Usuario();
+      this._endUrl = `${this._zuul}${this._url}`
    }
 
 
@@ -37,6 +39,6 @@ export class SinginService {
      this.usuarioSelected.email=from.email;
      this.usuarioSelected.enabled=true;
      this.usuarioSelected.roles=[this.role];
-     return this._http.post(this._url,this.usuarioSelected);
+     return this._http.post(this._endUrl,this.usuarioSelected);
   }
 }

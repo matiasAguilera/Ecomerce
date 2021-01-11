@@ -32,7 +32,6 @@
               "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
               "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss"
-              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -136,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "Ecomerce"
+  "defaultProject": "Ecomerce",
+  "cli": {
+    "analytics": false
+  }
 }
