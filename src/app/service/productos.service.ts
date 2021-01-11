@@ -37,7 +37,6 @@ export class ProductosService {
   }
 
   getImgProduct():Observable<Blob>{
-    console.log('pasa')
     return this._httpClient.get(`${this.endUrl}/lista/img/1`,{
       headers:this._token.getToken(),responseType: 'blob' 
     });
@@ -50,4 +49,7 @@ export class ProductosService {
     });
   }
  
+  deleteProducto(id:string){
+    return this._httpClient.delete(`${this.endUrl}/api/${id}`);
+  }
 }
