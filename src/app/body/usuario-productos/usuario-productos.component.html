@@ -19,7 +19,7 @@
           <!--Card content-->
           <h5 class="pink-text">{{item.nombre}}</h5>
           <!--Title-->
-          <h4 class="card-title">Precio: <b>{{item.precio}}</b></h4>
+          <h4 class="card-title">Precio: <b>${{item.precio |number: '1.0-0' }}</b></h4>
           <!--Text-->
   
           <mdb-card-text>

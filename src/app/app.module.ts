@@ -64,7 +64,7 @@ import { AddCarroComponent } from './PipesAndDialogs/add-carro/add-carro.compone
   ],
   providers: [
     AuthGuard,
-    AuthUsersGuard
+    AuthUsersGuard,
     
   ],
   bootstrap: [AppComponent]

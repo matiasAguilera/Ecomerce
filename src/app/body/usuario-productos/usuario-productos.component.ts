@@ -6,7 +6,7 @@ import {AddCarroComponent} from '../../PipesAndDialogs/add-carro/add-carro.compo
 @Component({
   selector: 'app-usuario-productos',
   templateUrl: './usuario-productos.component.html',
-  styleUrls: ['./usuario-productos.component.css']
+  styleUrls: ['./usuario-productos.component.css'],
 })
 export class UsuarioProductosComponent implements OnInit {
 
@@ -32,4 +32,5 @@ export class UsuarioProductosComponent implements OnInit {
   agregarProducto(producto:any){
     this.dialog.open(AddCarroComponent,{data:producto});
   }
+
 }

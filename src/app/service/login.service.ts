@@ -74,6 +74,14 @@ export class LoginService {
       return true
     }
   }
-  
+  user(){
+    let token2=localStorage.getItem('iA123')
+    let arrayToken=token2.split('.');
+    let payload=arrayToken[1];
+    let token1 = (atob(payload));
+    let json=JSON.parse(token1);
+    let user:string = json.user_name;
+    return user;
+  }
   
 }
