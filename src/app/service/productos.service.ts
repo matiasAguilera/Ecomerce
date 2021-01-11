@@ -50,6 +50,8 @@ export class ProductosService {
   }
  
   deleteProducto(id:string){
-    return this._httpClient.delete(`${this.endUrl}/api/${id}`);
+    return this._httpClient.delete(`${this.endUrl}/api/${id}`,{
+      headers:this._token.getToken()
+    });
   }
 }
