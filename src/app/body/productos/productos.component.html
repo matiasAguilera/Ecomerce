@@ -28,7 +28,7 @@
             <mat-card-title style="text-align: center;">{{item.nombre}}</mat-card-title>
             <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
           </mat-card-header>
-          <img mat-card-image [src]="'http://localhost:8090/servicio/productos/lista/img/' +item.id"  alt="Photo of a Shiba Inu">
+          <img mat-card-image [src]="'http://192.168.1.82:8090/servicio/productos/lista/img/' +item.id"  alt="Photo of a Shiba Inu">
           <mat-card-content>
             <!-- <p>
               The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -37,12 +37,29 @@
             </p> -->
             <p>Precio: {{item.precio }}</p>
             <p>Stock: {{item.stock}}</p>
+            
+            
           </mat-card-content>
-          <mat-card-actions>
-            <button class="btn waves-effect waves-light" mat-raised-button  (click)="dialogo(item)">editar
-              <i class="material-icons right">edit</i>
-        </button>
-          </mat-card-actions>
+          <div class="row">
+            <div class="col">
+              <mat-card-actions>
+                <button class="btn btn-outline-danger" mat-raised-button  (click)="deleteProducto(item.id)">Borrar
+                  <i class="material-icons right">close</i>
+                </button>
+              </mat-card-actions>
+            </div>
+            
+            <div class="col"></div>
+           
+            <div class="col"> 
+              <mat-card-actions>
+                <button class="btn btn-outline-primary" mat-raised-button  (click)="dialogo(item)">Editar
+                  <i class="material-icons right">edit</i>
+                </button>
+              </mat-card-actions>
+          </div>
+          </div>
+          
         </mat-card>
      
     </div>

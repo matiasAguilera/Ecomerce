@@ -97,7 +97,11 @@ export class ProductosComponent implements OnInit {
      
   }
 
-  
+  deleteProducto(id:string){
+    this._servicioProductos.deleteProducto(id).subscribe(()=>{
+      this.getProductos();
+    });
+  }
 
  
 }

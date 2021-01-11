@@ -37,16 +37,19 @@ export class ProductosService {
   }
 
   getImgProduct():Observable<Blob>{
-    return this._httpClient.get(`${this.url}/lista/img/1`,{
+    return this._httpClient.get(`${this.endUrl}/lista/img/1`,{
       headers:this._token.getToken(),responseType: 'blob' 
     });
     
   }
 
   putStock(id:any,stock:any){
-    return this._httpClient.put(`${this.url}/api/stock/${id}`,stock,{
+    return this._httpClient.put(`${this.endUrl}/api/stock/${id}`,stock,{
       headers:this._token.getToken()
     });
   }
  
+  deleteProducto(id:string){
+    return this._httpClient.delete(`${this.endUrl}/api/${id}`);
+  }
 }
